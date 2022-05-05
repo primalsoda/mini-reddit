@@ -1,0 +1,43 @@
+.App {
+  min-height: 1500px;
+}
+
+.App-header {
+  background-color: white;
+  height: 4rem;
+  color: white;
+  border-bottom: 1px solid grey;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+}
+
+.App-logo {
+  height: inherit;
+  width: auto;
+  margin-left: 2rem;
+  margin-right: 0;
+  position: fixed;
+}
+
+@media only screen and (min-width: 600px) {
+  #search {
+    position: relative;
+    margin: auto;
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #search {
+    position: relative;
+    left: 50%;
+    margin: 0;
+    width: 40%;
+  }
+}
+
+.search-bar {
+  width: 100%;
+}
