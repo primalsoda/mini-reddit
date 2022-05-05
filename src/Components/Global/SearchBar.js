@@ -11,7 +11,7 @@ export const SearchBar = () => {
     }
 
     return (
-        <form handleSumbit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input 
             className='search-bar'
             placeholder="Search..."
