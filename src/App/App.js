@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { icons } from '../icons';
+// import { icons } from '../icons';
 import { SearchBar } from '../Components/SearchBar';
 
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';

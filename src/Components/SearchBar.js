@@ -5,7 +5,7 @@ export const SearchBar = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const {name, value} = e.target;
+        //const {name, value} = e.target;
         //ADD MORE LATER
         setInput('');
     }
