@@ -1,9 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import ROUTES from "../../App/ROUTES";
 
 export const loadProfile = createAsyncThunk(
     'profile/loadProfile',
-    async (url) => {
-      const data = await fetch(url);
+    async (author) => {
+      const user_url = `${ROUTES.reddit_url}/user/${author}/.json`
+      const data = await fetch(user_url);
       const json = await data.json();
       return json;
     }

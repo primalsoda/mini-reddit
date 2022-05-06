@@ -3,6 +3,8 @@ import './App.css';
 import { SearchBar } from '../Components/Global/SearchBar';
 import Comments from '../Features/comments/Comments';
 import ROUTES from './ROUTES';
+import { Profile } from '../Features/profile/Profile';
+import { Route, Routes, NavLink } from 'react-router-dom';
 
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';
 
@@ -16,7 +18,11 @@ function App() {
           </div>
       </header>
       <main>
-          <Comments />
+        <Routes>
+          <Route path="/" element={<Comments />} />
+          <Route path='/user/:id' element={<Profile />} />
+        </Routes>
+        {/* <Comments /> */}
       </main>
     </div>
   );
@@ -28,6 +34,7 @@ export default App;
 // ------------------- SAMPLE FETCHES TO SEE DATA -------------------------
 
 
+/*
 const sampleHomePageLink = ROUTES.reddit_url_json;
 const getHomePageData = async () => {
   const data = await fetch(sampleHomePageLink);
@@ -35,8 +42,9 @@ const getHomePageData = async () => {
   console.log(json.data.children);
 };
 getHomePageData();
+*/
 
-const sampleProfileLink = 'https://www.reddit.com/user/LurkaLuna/.json';
+const sampleProfileLink = 'https://www.reddit.com/user/Godwin_Bot/.json';
 const getProfileData = async () => {
   const data = await fetch(sampleProfileLink);
   const json = await data.json();
@@ -44,18 +52,23 @@ const getProfileData = async () => {
 };
 getProfileData();
 
+
+/*
 const sampleCommentLink = 'https://www.reddit.com/r/funnysigns/comments/ujixi0/garage_sale_it_cracks_me_up_how_one_person/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
   const json = await data.json();
-  console.log(json.data.children);
+  console.log(json[0].data.children);
 };
 getCommentData();
 
-const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/comments/ujixi0/garage_sale_it_cracks_me_up_how_one_person/.json';
+
+
+const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/.json';
 const getSubredditData = async () => {
   const data = await fetch(sampleSubredditLink);
   const json = await data.json();
   console.log(json.data.children);
 };
 getSubredditData();
+*/

@@ -1,17 +1,18 @@
-/*
-
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProfile, profileIsLoading, loadProfile } from "./profileSlice";
 import Comment from "../../Components/Global/Comment";
+import { useParams } from "react-router-dom";
+import ROUTES from "../../App/ROUTES";
 
-export const Profile = (url) => {
+export const Profile = () => {
     const dispatch = useDispatch();
-    //const profileData = useSelector(selectProfile);
+    const profileData = useSelector(selectProfile);
     const isLoading = useSelector(profileIsLoading);
+    let { id } = useParams();
 
     useEffect(() => {
-        dispatch(loadProfile(url));
+        dispatch(loadProfile(id));
     }, [dispatch])
 
 
@@ -20,8 +21,10 @@ export const Profile = (url) => {
     };
     
     return (
-        <Comment />
+        <>
+            <h1>{id}</h1>
+            
+        </>
     )
 };
 
-*/

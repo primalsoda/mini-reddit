@@ -11,13 +11,13 @@ import { useDispatch } from "react-redux";
 const Comment = (props) => {
     const reddit_url = ROUTES.reddit_url;
     const subreddit_url_json = `${reddit_url}/r/${props.subreddit}/.json`;
-    const profile_url_json = `${reddit_url}/user/${props.author}/.json`;
+    // const profile_url_json = `${reddit_url}/user/${props.author}/.json`;
     const comment_url_json = `${reddit_url}${props.permalink}.json`;
 
     
-    const comment_url = `${ROUTES.website_url}${props.permalink}`;
-    const subreddit_url = `${ROUTES.website_url}/r/${props.subreddit}`
-    const profile_url = `${ROUTES.website_url}/user/${props.author}`;
+    const comment_url = `${props.permalink}`;
+    const subreddit_url = `/r/${props.subreddit}`
+    const profile_url = `/user/${props.author}`;
 
     const likeCount = parseFloat(props.ups/1000).toFixed(1);
     const title = props.title.length > 224 ? `${props.title.substring(0,225)}...` : `${props.title}`;
@@ -30,7 +30,7 @@ const Comment = (props) => {
                 <section className="comment-top">
                     <img src={props.profile_pic} alt={`profile for ${props.author}`} className="profile-pic"/>
                     <Link className="subreddit-link" to={subreddit_url} onClick={(e) => dispatch(loadSubreddit(subreddit_url_json))}>{props.subreddit_name_prefixed}</Link>
-                    <p>Posted by <Link to={profile_url} className="author-link" onClick={(e) => dispatch(loadProfile(profile_url_json))}>u/{props.author}</Link></p>
+                    <p>Posted by <Link to={profile_url} className="author-link" onClick={(e) => dispatch(loadProfile(props.author))}>u/{props.author}</Link></p>
                 </section>
                 <section className="comment-body">
                     <h2><Link className="title-link" to={comment_url} onClick={(e) => dispatch(loadComment(comment_url_json))}>{title}</Link></h2> 
