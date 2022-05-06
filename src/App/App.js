@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { SearchBar } from '../Components/Global/SearchBar';
-import { reddit_url } from '../Features/comments/commentsSlice';
 import Comments from '../Features/comments/Comments';
 import ROUTES from './ROUTES';
 
@@ -26,12 +25,16 @@ function App() {
 export default App;
 
 
-const getData = async () => {
-  const data = await fetch(ROUTES.reddit_url_json);
+// ------------------- SAMPLE FETCHES TO SEE DATA -------------------------
+
+
+const sampleHomePageLink = ROUTES.reddit_url_json;
+const getHomePageData = async () => {
+  const data = await fetch(sampleHomePageLink);
   const json = await data.json();
   console.log(json.data.children);
 };
-getData();
+getHomePageData();
 
 const sampleProfileLink = 'https://www.reddit.com/user/LurkaLuna/.json';
 const getProfileData = async () => {
@@ -40,3 +43,19 @@ const getProfileData = async () => {
   console.log(json.data.children);
 };
 getProfileData();
+
+const sampleCommentLink = 'https://www.reddit.com/r/funnysigns/comments/ujixi0/garage_sale_it_cracks_me_up_how_one_person/.json';
+const getCommentData = async () => {
+  const data = await fetch(sampleCommentLink);
+  const json = await data.json();
+  console.log(json.data.children);
+};
+getCommentData();
+
+const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/comments/ujixi0/garage_sale_it_cracks_me_up_how_one_person/.json';
+const getSubredditData = async () => {
+  const data = await fetch(sampleSubredditLink);
+  const json = await data.json();
+  console.log(json.data.children);
+};
+getSubredditData();
