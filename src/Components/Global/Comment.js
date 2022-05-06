@@ -10,8 +10,6 @@ import { useDispatch } from "react-redux";
 
 const Comment = (props) => {
     const reddit_url = ROUTES.reddit_url;
-    const subreddit_url_json = `${reddit_url}/r/${props.subreddit}/.json`;
-    // const profile_url_json = `${reddit_url}/user/${props.author}/.json`;
     const comment_url_json = `${reddit_url}${props.permalink}.json`;
 
     
@@ -29,7 +27,7 @@ const Comment = (props) => {
             <div className="comment-container">
                 <section className="comment-top">
                     <img src={props.profile_pic} alt={`profile for ${props.author}`} className="profile-pic"/>
-                    <Link className="subreddit-link" to={subreddit_url} onClick={(e) => dispatch(loadSubreddit(subreddit_url_json))}>{props.subreddit_name_prefixed}</Link>
+                    <Link className="subreddit-link" to={subreddit_url} onClick={(e) => dispatch(loadSubreddit(props.subreddit))}>{props.subreddit_name_prefixed}</Link>
                     <p>Posted by <Link to={profile_url} className="author-link" onClick={(e) => dispatch(loadProfile(props.author))}>u/{props.author}</Link></p>
                 </section>
                 <section className="comment-body">

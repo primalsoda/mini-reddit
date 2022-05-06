@@ -1,9 +1,8 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProfile, profileIsLoading, loadProfile } from "./profileSlice";
-import Comment from "../../Components/Global/Comment";
+// import Comment from "../../Components/Global/Comment";
 import { useParams } from "react-router-dom";
-import ROUTES from "../../App/ROUTES";
 
 export const Profile = () => {
     const dispatch = useDispatch();

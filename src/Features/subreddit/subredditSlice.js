@@ -1,9 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import ROUTES from "../../App/ROUTES";
 
 export const loadSubreddit = createAsyncThunk(
     'subreddit/loadSubreddit',
-    async (url) => {
-      const data = await fetch(url);
+    async (subreddit) => {
+      const subreddit_url = `${ROUTES.reddit_url}/r/${subreddit}/.json`
+      const data = await fetch(subreddit_url);
       const json = await data.json();
       return json;
     }
