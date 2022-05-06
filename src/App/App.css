@@ -1,10 +1,15 @@
+/*
+
 .App {
   min-height: 1500px;
-}
+} 
+
+*/
 
 .App-header {
   background-color: white;
   height: 4rem;
+  top: 0;
   color: white;
   border-bottom: 1px solid grey;
   display: flex;
@@ -44,4 +49,13 @@
 
 h2 {
   font-size: 16px;
+}
+
+main {
+  margin-top: 6rem;
+}
+
+.comments-thread {
+  margin-left: 8rem;
+  margin-right: 8rem;
 }
