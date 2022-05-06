@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectComments, loadAllComments, commentsAreLoading } from "./commentsSlice";
 import Comment from "../../Components/Global/Comment";
-import { website_url } from "../../App/App";
+import ROUTES from "../../App/ROUTES";
 
 const Comments = () => {
     const default_profile_pic = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2FiDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png%3Fwidth%3D720%26auto%3Dwebp%26s%3Dbe9d031a2551b47bcd40ec45feec636d42a32127&f=1&nofb=1';
@@ -43,7 +43,7 @@ const Comments = () => {
                 subreddit_id={comment.data.subreddit_id}
                 subreddit_name_prefixed={comment.data.subreddit_name_prefixed}
                 permalink={comment.data.permalink}
-                website_url={website_url}
+                website_url={ROUTES.website_url}
                 />)
                 )
                 

@@ -3,8 +3,8 @@ import './App.css';
 import { SearchBar } from '../Components/Global/SearchBar';
 import { reddit_url } from '../Features/comments/commentsSlice';
 import Comments from '../Features/comments/Comments';
+import ROUTES from './ROUTES';
 
-export const website_url = 'https://mini-reddit-codecademy.netlify.app'
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';
 
 const getData = async () => {

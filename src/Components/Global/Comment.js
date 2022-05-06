@@ -5,9 +5,11 @@ import { Profile } from "../../Features/profile/Profile";
 import { loadComment } from "../../Features/commentPage/commentPageSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faLink, faShareAlt } from "@fortawesome/free-solid-svg-icons";
+import ROUTES from "../../App/ROUTES";
+import { Link } from "react-router-dom";
 
 const Comment = (props) => {
-    const reddit_url = `https://reddit.com`;
+    const reddit_url = ROUTES.reddit_url;
     const subreddit_url_json = `${reddit_url}/r/${props.subreddit}/.json`;
     const profile_url_json = `${reddit_url}/user/${props.author}/.json`;
     const comment_url_json = `${reddit_url}${props.permalink}.json`;
