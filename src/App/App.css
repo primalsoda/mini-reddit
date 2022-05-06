@@ -59,3 +59,13 @@ main {
   margin-left: 8rem;
   margin-right: 8rem;
 }
+
+.profile-pic {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+
+.comment-thumbnail {
+  width: 12rem;
+}

@@ -5,6 +5,8 @@ import Comment from "../../Components/Global/Comment";
 import { website_url } from "../../App/App";
 
 const Comments = () => {
+    const default_profile_pic = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2FiDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png%3Fwidth%3D720%26auto%3Dwebp%26s%3Dbe9d031a2551b47bcd40ec45feec636d42a32127&f=1&nofb=1';
+    const default_thumbnail_img = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.organiclifestylemagazine.com%2Fwp-content%2Fuploads%2F2020%2F10%2FRunning-.png&f=1&nofb=1';
     const dispatch = useDispatch();
     const allComments = useSelector(selectComments);
     const isLoading = useSelector(commentsAreLoading);
@@ -29,8 +31,9 @@ const Comments = () => {
                 kind={comment.data.kind} 
                 name={comment.data.name} 
                 title={comment.data.title} 
-                thumbnail={comment.data.thumbnail === !null ? comment.data.thumbnail : ""}
-                small_video={comment.data.media === !null ? comment.data.media.reddit_video.scrubber_media_url : ""}                 
+                profile_pic={comment.data.thumbnail === "self" ? default_profile_pic : comment.data.thumbnail}
+                thumbnail_image={comment.data.thumbnail === "self" ? default_thumbnail_img : comment.data.thumbnail}
+                thumbnail_video={comment.data.media === !null ? comment.data.media.reddit_video.scrubber_media_url : null}                 
                 author={comment.data.author} 
                 date_created={comment.data.created}
                 ups={comment.data.ups} 
