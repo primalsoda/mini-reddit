@@ -15,7 +15,7 @@ const Comment = (props) => {
     
     const comment_url = `${props.website_url}${props.permalink}`;
     const subreddit_url = `${props.website}/r/${props.subreddit}`
-    const profile_url = `${props.website_url}/user/${props.author}`;
+    //const profile_url = `${props.website_url}/user/${props.author}`;
 
     const likeCount = parseFloat(props.ups/1000).toFixed(1);
     const title = `${props.title.substring(0,230)}...`;
@@ -24,13 +24,13 @@ const Comment = (props) => {
         <section className="individual-comment">
             <div className="comment-container">
                 <section className="comment-top">
-                    <img src={props.profile_pic} alt={`profile image for ${props.author}`} className="profile-pic"/>
+                    <img src={props.profile_pic} alt={`profile for ${props.author}`} className="profile-pic"/>
                     <a className="subreddit-link" href={subreddit_url} onClick={() => loadSubreddit(subreddit_url_json)}>{props.subreddit_name_prefixed}</a>
-                    <p>Posted by <a href="" className="author-link" onClick={() => Profile(profile_url_json)}>u/{props.author}</a></p>
+                    <p>Posted by <a href="/" className="author-link" onClick={() => Profile(profile_url_json)}>u/{props.author}</a></p>
                 </section>
                 <section className="comment-body">
                     <h2><a className="title-link" href={comment_url} onClick={() => loadComment(comment_url_json)}>{title}</a></h2> 
-                    <img className="comment-thumbnail" src={props.thumbnail_video ? props.thumbnail_video : props.thumbnail_image}/>
+                    <img alt="comment thumbnail" className="comment-thumbnail" src={props.thumbnail_video ? props.thumbnail_video : props.thumbnail_image}/>
                     <span className="spacer"></span>
                     <div className="like-count-box">
                         <p>{`${likeCount}K`}</p>
