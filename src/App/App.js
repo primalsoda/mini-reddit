@@ -7,14 +7,6 @@ import ROUTES from './ROUTES';
 
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';
 
-const getData = async () => {
-  const data = await fetch(reddit_url);
-  const json = await data.json();
-  console.log(json.data.children);
-};
-
-getData();
-
 function App() {
   return (
     <div className="App">
@@ -32,3 +24,19 @@ function App() {
 }
 
 export default App;
+
+
+const getData = async () => {
+  const data = await fetch(ROUTES.reddit_url_json);
+  const json = await data.json();
+  console.log(json.data.children);
+};
+getData();
+
+const sampleProfileLink = 'https://www.reddit.com/user/LurkaLuna/.json';
+const getProfileData = async () => {
+  const data = await fetch(sampleProfileLink);
+  const json = await data.json();
+  console.log(json.data.children);
+};
+getProfileData();

@@ -1,11 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-export const reddit_url = 'https://www.reddit.com/.json';
+import ROUTES from "../../App/ROUTES";
 
 export const loadAllComments = createAsyncThunk(
     'allComments/loadAllComments',
     async () => {
-      const data = await fetch(reddit_url);
+      const data = await fetch(ROUTES.reddit_url_json);
       const json = await data.json();
       return json;
     }
