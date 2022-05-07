@@ -6,7 +6,7 @@ import ROUTES from './ROUTES';
 import { Profile } from '../Features/profile/Profile';
 import { Subreddit } from '../Features/subreddit/Subreddit';
 import { CommentPage } from '../Features/commentPage/CommentPage';
-import { Route, Routes, NavLink } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';
 

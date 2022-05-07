@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 export const CommentPage = () => {
     const dispatch = useDispatch();
-    const commentData = useSelector(selectComment);
+    //const commentData = useSelector(selectComment);
     const isLoading = useSelector(commentIsLoading);
     let { subreddit, id, title } = useParams();
 
