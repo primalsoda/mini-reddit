@@ -4,6 +4,7 @@ import commentsSlice from "../Features/comments/commentsSlice";
 import subredditSlice from "../Features/subreddit/subredditSlice";
 import profileSlice from "../Features/profile/profileSlice";
 import commentPageSlice from "../Features/commentPage/commentPageSlice";
+import subredditSideBarSlice from "../Features/subredditSideBar/subredditSideBarSlice";
 
 const store = configureStore({
     reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
         subreddit: subredditSlice,
         profile: profileSlice,
         comment: commentPageSlice,
+        homepageData: subredditSideBarSlice,
     }
 });
 

@@ -1,7 +1,7 @@
 import React from "react";
-import { loadSubreddit } from "../../Features/subreddit/subredditSlice";
-import { loadProfile } from "../../Features/profile/profileSlice";
-import { loadComment } from "../../Features/commentPage/commentPageSlice";
+import { loadSubreddit } from "../Features/subreddit/subredditSlice";
+import { loadProfile } from "../Features/profile/profileSlice";
+import { loadComment } from "../Features/commentPage/commentPageSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faLink, faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
