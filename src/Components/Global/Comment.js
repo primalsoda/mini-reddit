@@ -4,15 +4,10 @@ import { loadProfile } from "../../Features/profile/profileSlice";
 import { loadComment } from "../../Features/commentPage/commentPageSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments, faLink, faShareAlt } from "@fortawesome/free-solid-svg-icons";
-import ROUTES from "../../App/ROUTES";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 const Comment = (props) => {
-    const reddit_url = ROUTES.reddit_url;
-    const comment_url_json = `${reddit_url}${props.permalink}.json`;
-
-    
     const comment_url = `${props.permalink}`;
     const subreddit_url = `/r/${props.subreddit}`
     const profile_url = `/user/${props.author}`;
@@ -31,7 +26,7 @@ const Comment = (props) => {
                     <p>Posted by <Link to={profile_url} className="author-link" onClick={(e) => dispatch(loadProfile(props.author))}>u/{props.author}</Link></p>
                 </section>
                 <section className="comment-body">
-                    <h2><Link className="title-link" to={comment_url} onClick={(e) => dispatch(loadComment(comment_url_json))}>{title}</Link></h2> 
+                    <h2><Link className="title-link" to={comment_url} onClick={(e) => dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}))}>{title}</Link></h2> 
                     <img alt="comment thumbnail" className="comment-thumbnail" src={props.thumbnail_video ? props.thumbnail_video : props.thumbnail_image}/>
                     <span className="spacer"></span>
                     <div className="like-count-box">

@@ -5,6 +5,7 @@ import Comments from '../Features/comments/Comments';
 import ROUTES from './ROUTES';
 import { Profile } from '../Features/profile/Profile';
 import { Subreddit } from '../Features/subreddit/Subreddit';
+import { CommentPage } from '../Features/commentPage/CommentPage';
 import { Route, Routes, NavLink } from 'react-router-dom';
 
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';
@@ -21,8 +22,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Comments />} />
-          <Route path='/user/:id' element={<Profile />} />
-          <Route path='/r/:id' element={<Subreddit />} />
+          <Route path='/user/:user_id' element={<Profile />} />
+          <Route path='/r/:subreddit/comments/:id/:title' element={<CommentPage />} />
+          <Route path='/r/:subreddit' element={<Subreddit />} />
         </Routes>
         {/* <Comments /> */}
       </main>
@@ -55,16 +57,14 @@ const getProfileData = async () => {
 getProfileData();
 
 
-
 const sampleCommentLink = 'https://www.reddit.com/r/funnysigns/comments/ujixi0/garage_sale_it_cracks_me_up_how_one_person/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
   const json = await data.json();
-  console.log(json[0].data.children);
+  console.log(json[0].data.children[0]);
 };
 getCommentData();
 
-*/
 
 const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/.json';
 const getSubredditData = async () => {
@@ -73,3 +73,4 @@ const getSubredditData = async () => {
   console.log(json.data.children);
 };
 getSubredditData();
+*/

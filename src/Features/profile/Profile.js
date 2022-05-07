@@ -8,10 +8,10 @@ export const Profile = () => {
     const dispatch = useDispatch();
     const profileData = useSelector(selectProfile);
     const isLoading = useSelector(profileIsLoading);
-    let { id } = useParams();
+    let { user_id } = useParams();
 
     useEffect(() => {
-        dispatch(loadProfile(id));
+        dispatch(loadProfile(user_id));
     }, [dispatch])
 
 
@@ -21,7 +21,7 @@ export const Profile = () => {
     
     return (
         <>
-            <h1>{id}</h1>
+            <h1>{user_id}</h1>
             
         </>
     )

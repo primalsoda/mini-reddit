@@ -9,12 +9,12 @@ export const Subreddit = () => {
     const dispatch = useDispatch();
     const subredditData = useSelector(selectSubreddit);
     const isLoading = useSelector(subredditIsLoading);
-    let { id } = useParams();
+    let { subreddit } = useParams();
 
     //console.log(subredditData);
 
     useEffect(() => {
-        dispatch(loadSubreddit(id));
+        dispatch(loadSubreddit(subreddit));
     }, [dispatch])
 
 
@@ -24,7 +24,7 @@ export const Subreddit = () => {
     
     return (
         <>
-            <h1>{`r/${id}`}</h1>
+            <h1>{`r/${subreddit}`}</h1>
             
         </>
     )
