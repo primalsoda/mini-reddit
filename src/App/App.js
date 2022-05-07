@@ -38,7 +38,7 @@ export default App;
 // ------------------- SAMPLE FETCHES TO SEE DATA -------------------------
 
 
-/*
+
 const sampleHomePageLink = ROUTES.reddit_url_json;
 const getHomePageData = async () => {
   const data = await fetch(sampleHomePageLink);
@@ -47,7 +47,7 @@ const getHomePageData = async () => {
 };
 getHomePageData();
 
-
+/*
 const sampleProfileLink = 'https://www.reddit.com/user/Godwin_Bot/.json';
 const getProfileData = async () => {
   const data = await fetch(sampleProfileLink);
