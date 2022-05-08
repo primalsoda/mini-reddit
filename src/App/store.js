@@ -13,6 +13,7 @@ const store = configureStore({
         profile: profileSlice,
         comment: commentPageSlice,
         homepageData: subredditSideBarSlice,
+        //
     }
 });
 

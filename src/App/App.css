@@ -47,7 +47,7 @@ main {
   margin-right: 8rem;
 }
 
-/* ----------------------------- COMMENT BOX ---------------- */
+/* ------------------------------------------------ COMMENT BOX ---------------- */
 
 .individual-comment {
   border: 1px solid grey;
@@ -161,7 +161,9 @@ main {
   height: 100%;
 }
 
-/* -------------------------------- MOBILE DEVICES -------------- */
+
+/* --------------------------------------------- MOBILE DEVICES -------------- */
+
 
 @media only screen and (max-width: 600px) {
   #search {
@@ -170,4 +172,32 @@ main {
     margin: 0;
     width: 40%;
   }
+}
+
+
+/* --------------------------------------------- SUBREDDIT SIDE BAR BOX -------------- */
+
+
+#SRSB_1,
+#SRSB_5,
+#SRSB_7,
+#SRSB_11,
+#SRSB_12,
+#SRSB_13,
+#SRSB_14,
+#SRSB_15,
+#SRSB_16,
+#SRSB_17,
+#SRSB_18,
+#SRSB_19,
+#SRSB_20,
+#SRSB_21,
+#SRSB_22,
+#SRSB_23,
+#SRSB_24 {
+  display: none;
+}
+
+.SRSB_mini > p {
+  color: red;
 }

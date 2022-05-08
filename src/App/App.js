@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import { SearchBar } from '../Components/Global/SearchBar';
+import { SearchBar } from '../Components/SearchBar';
 import Comments from '../Features/comments/Comments';
 import ROUTES from './ROUTES';
 import { Profile } from '../Features/profile/Profile';
 import { Subreddit } from '../Features/subreddit/Subreddit';
 import { CommentPage } from '../Features/commentPage/CommentPage';
 import { Route, Routes } from 'react-router-dom';
+import SubredditSideBar from '../Features/subredditSideBar/SubredditSideBar';
+import { HomePage } from '../Pages/HomePage';
 
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';
 
@@ -21,7 +23,8 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Comments />} />
+          <Route path="/" element={<HomePage />}>
+          </ Route>
           <Route path='/user/:user_id' element={<Profile />} />
           <Route path='/r/:subreddit/comments/:id/:title' element={<CommentPage />} />
           <Route path='/r/:subreddit' element={<Subreddit />} />
