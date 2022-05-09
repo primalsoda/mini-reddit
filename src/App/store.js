@@ -1,19 +1,18 @@
 //import React from "react";
 import { configureStore } from "@reduxjs/toolkit";
-import commentsSlice from "../Features/comments/commentsSlice";
-import subredditSlice from "../Features/subreddit/subredditSlice";
-import profileSlice from "../Features/profile/profileSlice";
 import commentPageSlice from "../Features/commentPage/commentPageSlice";
-import subredditSideBarSlice from "../Features/subredditSideBar/subredditSideBarSlice";
+import profileSlice from "../Features/profile/profileSlice";
+import subredditSlice from "../Features/subreddit/subredditSlice";
+import commentsSlice from "../Features/comments/commentsSlice";
+import _commentsSlice from "../Features/comments/_commentsSlice";
 
 const store = configureStore({
     reducer: {
         comments: commentsSlice,
-        subreddit: subredditSlice,
+        commentsPage: commentPageSlice,
+        _comments: _commentsSlice,
         profile: profileSlice,
-        comment: commentPageSlice,
-        homepageData: subredditSideBarSlice,
-        //
+        subreddit: subredditSlice,
     }
 });
 

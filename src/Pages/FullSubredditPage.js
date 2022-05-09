@@ -1,6 +1,6 @@
 import React from "react";
 import { Subreddit } from "../Features/subreddit/Subreddit";
-import SubredditSideBar from "../Features/subredditSideBar/SubredditSideBar";
+import SubredditSideBar from "../Components/SubredditSideBar";
 
 const FullSubredditPage = () => {
     //
