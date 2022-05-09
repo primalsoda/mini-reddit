@@ -11,7 +11,7 @@ const _Comments = ({allData}) => {
             {
                 allData.map((arrItem) => {
                     let checker = true;
-                    if (allData.data.thumbnail.slice(0, 4) !== "http") {
+                    if (arrItem.data.thumbnail.slice(0, 4) !== "http") {
                         checker = false;
                     };
 

@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import _Comments from "../Features/comments/_Comments";
 import { useDispatch, useSelector } from "react-redux";
-import { selectComments, loadAllComments, commentsAreLoading } from "../Features/comments/commentsSlice";
+import { selectComments, commentsAreLoading, loadCommentsData } from "../Features/comments/_commentsSlice";
 import SubredditSideBar from "./SubredditSideBar";
 
 export const Threads = () => {
@@ -10,7 +10,7 @@ export const Threads = () => {
     const isLoading = useSelector(commentsAreLoading);
     
     useEffect(() => {
-        dispatch(loadAllComments());
+        dispatch(loadCommentsData());
     }, [dispatch]); 
 
     if (isLoading) {
