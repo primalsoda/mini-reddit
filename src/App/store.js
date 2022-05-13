@@ -7,7 +7,7 @@ import _commentsSlice from "../Features/comments/_commentsSlice";
 
 const store = configureStore({
     reducer: {
-        commentsPage: commentPageSlice,
+        commentPage: commentPageSlice,
         _comments: _commentsSlice,
         profile: profileSlice,
         subreddit: subredditSlice,

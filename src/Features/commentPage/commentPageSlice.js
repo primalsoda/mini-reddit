@@ -37,6 +37,6 @@ export const commentPageSlice = createSlice({
     },
   });
   
-  export const selectComment = (state) => state.comment.comment;
-  export const commentIsLoading = (state) => state.comment.isLoadingComment;
+  export const selectComment = (state) => state.commentPage.comment;
+  export const commentIsLoading = (state) => state.commentPage.isLoadingComment;
   export default commentPageSlice.reducer;  

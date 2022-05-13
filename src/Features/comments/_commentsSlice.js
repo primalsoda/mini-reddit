@@ -3,8 +3,8 @@ import ROUTES from "../../App/ROUTES";
 
 export const loadCommentsData = createAsyncThunk(
     'data/loadCommentsData',
-    async () => {
-      const data = await fetch(ROUTES.reddit_url_json);
+    async (url) => {
+      const data = await fetch(url);
       const json = await data.json();
       return json;
     }

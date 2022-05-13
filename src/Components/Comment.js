@@ -27,16 +27,16 @@ const Comment = (props) => {
                 </section>
                 <section className="comment-body">
                     <h2><Link className="title-link" to={comment_url} onClick={(e) => dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}))}>{title}</Link></h2> 
-                    <img alt="comment thumbnail" className="comment-thumbnail" src={props.thumbnail_video ? props.thumbnail_video : props.thumbnail_image}/>
+                    <img alt="comment thumbnail" className="comment-thumbnail" src={props.thumbnail_image}/>
                     <span className="spacer"></span>
                     <div className="like-count-box">
                         <p>{`${likeCount}K`}</p>
                     </div>
                 </section>
                 <div className="comment-bottom">
-                    <button className="discussion-btn"><FontAwesomeIcon icon={faComments} /></button>
-                    <button className="links-btn"><FontAwesomeIcon icon={faLink} /></button>
-                    <button className="share-btn"><FontAwesomeIcon icon={faShareAlt} /></button>
+                    <button className="discussion-btn"><FontAwesomeIcon icon={faComments} />Discussion</button>
+                    <button className="links-btn"><FontAwesomeIcon icon={faLink} />Links</button>
+                    <button className="share-btn"><FontAwesomeIcon icon={faShareAlt} />Share</button>
                 </div> 
             </div>
         </section>
