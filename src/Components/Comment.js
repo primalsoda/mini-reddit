@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 
 const Comment = (props) => {
     const comment_url = `${props.permalink}`;
-    const subreddit_url = `/r/${props.subreddit}`
+    const subreddit_url = `/r/${props.subreddit}`;
     const profile_url = `/user/${props.author}`;
 
     const likeCount = parseFloat(props.ups/1000).toFixed(1);
@@ -34,9 +34,9 @@ const Comment = (props) => {
                     </div>
                 </section>
                 <div className="comment-bottom">
-                    <button className="discussion-btn"><FontAwesomeIcon icon={faComments} />Discussion</button>
-                    <button className="links-btn"><FontAwesomeIcon icon={faLink} />Links</button>
-                    <button className="share-btn"><FontAwesomeIcon icon={faShareAlt} />Share</button>
+                    <Link to={comment_url} className="comment-bottom-link" onClick={(e) => dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}))}><button><FontAwesomeIcon icon={faComments} />Discussion</button></Link>
+                    <Link to={comment_url} className="comment-bottom-link" onClick={(e) => dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}))}><button><FontAwesomeIcon icon={faLink} />Details</button></Link>
+                    <Link to="" className="comment-bottom-link"><button><FontAwesomeIcon icon={faShareAlt} />Share</button></Link>
                 </div> 
             </div>
         </section>

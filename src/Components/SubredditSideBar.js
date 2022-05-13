@@ -7,6 +7,8 @@ const SubredditSideBar = ({allData}) => {
 
     return (
         <div className="subreddit-sideBar">
+            <h2>Featured Subreddits</h2>
+            
             {
                 allData.map((arrItem, index) => {
                     let checker = true;
@@ -23,7 +25,7 @@ const SubredditSideBar = ({allData}) => {
                         thumbnail_video={arrItem.data.media === !null ? arrItem.data.media.reddit_video.scrubber_media_url : null}                 
                         score={arrItem.data.score}
                         subscribers={arrItem.data.subreddit_subscribers}
-                        subreddit={arrItem.data.subreddit_name_prefixed}
+                        subreddit={arrItem.data.subreddit}
                         permalink={arrItem.data.permalink}
                         />
                     );

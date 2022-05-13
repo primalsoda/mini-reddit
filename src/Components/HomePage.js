@@ -4,8 +4,9 @@ import SubredditSideBar from "./SubredditSideBar";
 import { useDispatch, useSelector } from "react-redux";
 import { selectComments, commentsAreLoading, loadCommentsData } from "../Features/comments/_commentsSlice";
 import ROUTES from "../App/ROUTES";
+import HomePageCategoryBox from "./HomePageCategoryBox";
 
-export const Threads = () => {
+export const HomePage = () => {
     const dispatch = useDispatch();
     const allData = useSelector(selectComments);
     const isLoading = useSelector(commentsAreLoading);
@@ -24,7 +25,8 @@ export const Threads = () => {
             <section className="comments-thread">
                 <_Comments allData={allData}/>
             </section>
-            <section className="subreddit-sidebar-thread">
+            <section className="sidebar-thread">
+                <HomePageCategoryBox />
                 <SubredditSideBar allData={allData}/>
             </section>
         </div>

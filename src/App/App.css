@@ -36,7 +36,11 @@ body {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 16.6px;
+}
+
+h3 {
+  font-size: 15.5px;
 }
 
 main {
@@ -129,9 +133,10 @@ main {
   flex-basis: 55%;
 }
 
-.comment-body > img {
+.comment-thumbnail {
   flex-basis: 20%;
   width: 3rem;
+  object-fit: cover;
   max-height: 100%;
 }
 
@@ -159,8 +164,13 @@ main {
   height: 2rem;
 }
 
-.comment-bottom > button {
-  width: 30%;
+.comment-bottom-link {
+  width: 33%;
+  height: inherit
+}
+
+.comment-bottom-link > button {
+  width: 100%;
   height: 100%;
 }
 
@@ -204,4 +214,8 @@ main {
 
 .SRSB_mini > p {
   color: red;
+}
+
+.subreddit-sideBar > h2 {
+  text-transform: uppercase;
 }

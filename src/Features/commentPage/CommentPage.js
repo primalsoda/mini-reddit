@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadComment } from "./commentPageSlice";
 import { selectComment } from "./commentPageSlice";
 import { commentIsLoading } from "./commentPageSlice";
-// import Comment from "../../Components/Global/Comment";
+import _Comments from "../comments/_Comments";
 import { useParams } from "react-router-dom";
 
 export const CommentPage = () => {
@@ -23,10 +23,9 @@ export const CommentPage = () => {
     
     return (
         <>
-            <h1>{subreddit}</h1>
-            <p>{id}</p>
             <p>{title}</p>
-            
+            <p>{id}</p>
+            <p>{subreddit}</p> 
         </>
     )
 };

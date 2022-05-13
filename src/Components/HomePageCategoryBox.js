@@ -4,7 +4,8 @@ import { faFire, faStar, faNewspaper, faArrowUp } from "@fortawesome/free-solid-
 import { loadCommentsData } from "../Features/comments/_commentsSlice";
 import { useDispatch } from "react-redux";
 import ROUTES from "../App/ROUTES";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { commentsAreLoading } from "../Features/comments/_commentsSlice";
 
 const HomePageCategoryBox = () => {
     const dispatch = useDispatch();

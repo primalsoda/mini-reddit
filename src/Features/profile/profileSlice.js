@@ -7,7 +7,14 @@ export const loadProfile = createAsyncThunk(
       const user_url = `${ROUTES.reddit_url}/user/${user_id}/.json`
       const data = await fetch(user_url);
       const json = await data.json();
-      return json;
+      let newArr = [];
+      await json.data.children.forEach((item) => {
+        if (item.kind === "t3") {
+          newArr.push(item);
+          return;
+        };
+      });
+      return newArr;
     }
   );
 
@@ -26,7 +33,7 @@ export const profileSlice = createSlice({
         })
         .addCase(loadProfile.fulfilled, (state, action) => {
           state.isLoadingProfile = false;
-          state.profile = action.payload.data.children;
+          state.profile = action.payload;
         })
         .addCase(loadProfile.rejected, (state, action) => {
           state.isLoadingProfile = false;

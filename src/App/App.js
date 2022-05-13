@@ -6,7 +6,7 @@ import { Profile } from '../Features/profile/Profile';
 import { Subreddit } from '../Features/subreddit/Subreddit';
 import { CommentPage } from '../Features/commentPage/CommentPage';
 import { Route, Routes, Link } from 'react-router-dom';
-import { HomePage } from '../Pages/HomePage';
+import { HomePage } from '../Components/HomePage';
 
 const logo = 'https://logos-world.net/wp-content/uploads/2020/10/Reddit-Logo.png';
 
@@ -38,7 +38,7 @@ export default App;
 // ------------------- SAMPLE FETCHES TO SEE DATA -------------------------
 
 
-
+/*
 const sampleHomePageLink = ROUTES.reddit_url_json;
 const getHomePageData = async () => {
   const data = await fetch(sampleHomePageLink);
@@ -47,8 +47,8 @@ const getHomePageData = async () => {
 };
 getHomePageData();
 
-/*
-const sampleProfileLink = 'https://www.reddit.com/user/Godwin_Bot/.json';
+*/
+const sampleProfileLink = 'https://www.reddit.com/user/FreeRangeMenses/.json';
 const getProfileData = async () => {
   const data = await fetch(sampleProfileLink);
   const json = await data.json();
@@ -56,7 +56,7 @@ const getProfileData = async () => {
 };
 getProfileData();
 
-
+/*
 const sampleCommentLink = 'https://www.reddit.com/r/funnysigns/comments/ujixi0/garage_sale_it_cracks_me_up_how_one_person/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
