@@ -4,6 +4,11 @@ import { selectProfile, profileIsLoading, loadProfile } from "./profileSlice";
 import Comments from "../comments/Comments";
 import { useParams } from "react-router-dom";
 
+//import SubredditSideBar from "../../Components/SubredditSideBar";
+//import { selectComments, commentsAreLoading, loadCommentsData } from "../comments/commentsSlice";
+//import ROUTES from "../App/ROUTES";
+//import HomePageCategoryBox from "../../Components/HomePageCategoryBox";
+
 export const Profile = () => {
     const dispatch = useDispatch();
     const profileData = useSelector(selectProfile);

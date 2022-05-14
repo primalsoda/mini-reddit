@@ -211,20 +211,31 @@ main {
   flex-direction: column;
 }
 
-.category-box > button {
-  border: none;
-  background-color: inherit;
-  text-align: left;
-  font-size: 1.25rem;
-  margin-top: 8px;
-  width: 9rem;
-  height: 2.5rem;
-  color: #474747;
+.category-box > .active {
+  color: #ff7518;
 }
 
-.category-box > button:hover {
-  color: orange; 
+.category-box > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  font-size: 1.25rem;
+  margin-top: 8px;
+  width: 6.6em;
+  height: 2.5rem;
+  color: #474747;
+  text-decoration: none;
+}
+
+.category-box > a:hover {
+  color: #ff7518; 
   cursor: pointer;
+}
+
+.category-box > a > p {
+  margin-left: 30px;
 }
 
 

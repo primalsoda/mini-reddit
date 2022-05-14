@@ -22,6 +22,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/:category" element={<HomePage />} />
           <Route path='/user/:user_id' element={<Profile />} />
           <Route path='/r/:subreddit/comments/:id/:title' element={<CommentPage />} />
           <Route path='/r/:subreddit' element={<Subreddit />} />
@@ -55,7 +56,7 @@ const getProfileData = async () => {
 };
 getProfileData();
 
-*/
+
 const sampleCommentLink = 'https://www.reddit.com/r/funny/comments/uozfwa/be_honest_you_did_something_like_this_at_least/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
@@ -66,7 +67,7 @@ const getCommentData = async () => {
 };
 getCommentData();
 
-/*
+
 const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/.json';
 const getSubredditData = async () => {
   const data = await fetch(sampleSubredditLink);

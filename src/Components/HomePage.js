@@ -5,16 +5,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectComments, commentsAreLoading, loadCommentsData } from "../Features/comments/commentsSlice";
 import ROUTES from "../App/ROUTES";
 import HomePageCategoryBox from "./HomePageCategoryBox";
+import { useParams } from "react-router-dom";
 
 export const HomePage = () => {
     const dispatch = useDispatch();
     const allData = useSelector(selectComments);
     const isLoading = useSelector(commentsAreLoading);
-    
+    const { category } = useParams();
+    let url = `${ROUTES.reddit_url}/.json`;
+
+    if (category) {
+        url = `${ROUTES.reddit_url}/${category}/.json`;
+    }
+
     useEffect(() => {
-        const url = ROUTES.reddit_url_json;
         dispatch(loadCommentsData(url));
-    }, [dispatch]); 
+    }, [dispatch, url]); 
 
     if (isLoading) {
         return <section className="loading">Loading data...</section>

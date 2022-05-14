@@ -4,8 +4,8 @@ import { faFire, faStar, faNewspaper, faArrowUp } from "@fortawesome/free-solid-
 import { loadCommentsData } from "../Features/comments/commentsSlice";
 import { useDispatch } from "react-redux";
 import ROUTES from "../App/ROUTES";
-//import { Link } from "react-router-dom";
-//import { commentsAreLoading } from "../Features/comments/commentsSlice";
+import { NavLink } from "react-router-dom";
+
 
 const HomePageCategoryBox = () => {
     const dispatch = useDispatch();
@@ -16,10 +16,22 @@ const HomePageCategoryBox = () => {
     
     return (
         <div className="category-box">
-            <button id="best-btn" onClick={(e) => dispatch(loadCommentsData(best_url))}><FontAwesomeIcon icon={faStar} />  Best</button>
-            <button id="hot-btn" onClick={(e) => dispatch(loadCommentsData(hot_url))}><FontAwesomeIcon icon={faFire} />  Hot</button>
-            <button id="new-btn" onClick={(e) => dispatch(loadCommentsData(new_url))}><FontAwesomeIcon icon={faNewspaper} />  New</button>
-            <button id="top-btn" onClick={(e) => dispatch(loadCommentsData(top_url))}><FontAwesomeIcon icon={faArrowUp} />  Top</button>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={(e) => dispatch(loadCommentsData(best_url))}>
+                <FontAwesomeIcon icon={faStar} />
+                <p>Best</p>
+            </NavLink>
+            <NavLink to="/hot" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={(e) => dispatch(loadCommentsData(hot_url))}>
+                <FontAwesomeIcon icon={faFire} />
+                <p>Hot</p>
+            </NavLink>
+            <NavLink to="/new" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={(e) => dispatch(loadCommentsData(new_url))}>
+                <FontAwesomeIcon icon={faNewspaper} />
+                <p>New</p>
+            </NavLink>
+            <NavLink to="/top" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={(e) => dispatch(loadCommentsData(top_url))}>
+                <FontAwesomeIcon icon={faArrowUp} />
+                <p>Top</p>
+            </NavLink>
         </div>
     );
 };
