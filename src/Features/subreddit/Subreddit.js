@@ -14,7 +14,7 @@ export const Subreddit = () => {
 
     useEffect(() => {
         dispatch(loadSubreddit(subreddit));
-    }, [dispatch])
+    }, [dispatch, subreddit])
 
 
     if (isLoading) {

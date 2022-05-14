@@ -12,7 +12,7 @@ export const Profile = () => {
 
     useEffect(() => {
         dispatch(loadProfile(user_id));
-    }, [dispatch])
+    }, [dispatch, user_id])
 
 
     if (isLoading) {
