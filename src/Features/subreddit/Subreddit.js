@@ -26,7 +26,11 @@ export const Subreddit = () => {
 
 
     if (isLoading || homePageLoading) {
-        return <div>Loading data...</div>
+        return <div className="loading">Loading data...</div>
+    };
+
+    if (!subredditData.length) {
+        return <div className="failed-search">Try new search term</div>
     };
     
     return (

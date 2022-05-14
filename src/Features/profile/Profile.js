@@ -25,7 +25,7 @@ export const Profile = () => {
 
 
     if (isLoading || homePageLoading) {
-        return <div className="load-profile">Loading data...</div>
+        return <div className="loading">Loading data...</div>
     };
     
     return (

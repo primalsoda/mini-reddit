@@ -3,14 +3,14 @@ import { loadSubreddit } from "../Features/subreddit/subredditSlice";
 import { useDispatch } from "react-redux";
 //import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+//import ROUTES from "../App/ROUTES";
 
 export const SearchBar = () => {
     const [input, setInput] = useState();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    //const subredditData = useSelector(selectSubreddit); 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (input.includes(" ")) {
             let combined_input = input.replace(/ /g, "");

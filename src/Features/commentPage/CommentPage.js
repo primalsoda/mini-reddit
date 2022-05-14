@@ -44,7 +44,7 @@ export const CommentPage = () => {
     };
 
     if (isLoading) {
-        return <div className="load-comment">Loading data...</div>
+        return <div className="loading">Loading data...</div>
     };
 
     return (
