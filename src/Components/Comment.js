@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 const Comment = (props) => {
+    const dispatch = useDispatch();
     const comment_url = `${props.permalink}`;
     const subreddit_url = `/r/${props.subreddit}`;
     const profile_url = `/user/${props.author}`;
@@ -15,18 +16,30 @@ const Comment = (props) => {
     const likeCount = parseFloat(props.ups/1000).toFixed(1);
     const title = props.title.length > 224 ? `${props.title.substring(0,225)}...` : `${props.title}`;
 
-    const dispatch = useDispatch();
+    const handleClickSubreddit = (e) => {
+        dispatch(loadSubreddit(props.subreddit));
+        //setHomePageData(props);
+    };
+
+    const handleClickComment = (e) => {
+        dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}));
+    };
+
+    const handleClickProfile = (e) => {
+        dispatch(loadProfile(props.author));
+        //etHomePageData(props);
+    };
 
     return (
         <section className="individual-comment">
             <div className="comment-container">
                 <section className="comment-top">
                     <img src={props.profile_pic} alt={`profile for ${props.author}`} className="profile-pic"/>
-                    <Link className="subreddit-link" to={subreddit_url} onClick={(e) => dispatch(loadSubreddit(props.subreddit))}>{props.subreddit_name_prefixed}</Link>
-                    <p>Posted by <Link to={profile_url} className="author-link" onClick={(e) => dispatch(loadProfile(props.author))}>u/{props.author}</Link></p>
+                    <Link className="subreddit-link" to={subreddit_url} onClick={handleClickSubreddit}>{props.subreddit_name_prefixed}</Link>
+                    <p>Posted by <Link className="author-link" to={profile_url} onClick={handleClickProfile}>u/{props.author}</Link></p>
                 </section>
                 <section className="comment-body">
-                    <h2><Link className="title-link" to={comment_url} onClick={(e) => dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}))}>{title}</Link></h2> 
+                    <h2><Link className="title-link" to={comment_url} onClick={handleClickComment}>{title}</Link></h2> 
                     <img alt="comment thumbnail" className="comment-thumbnail" src={props.thumbnail_image}/>
                     <span className="spacer"></span>
                     <div className="like-count-box">
@@ -34,9 +47,15 @@ const Comment = (props) => {
                     </div>
                 </section>
                 <div className="comment-bottom">
-                    <Link to={comment_url} className="comment-bottom-link" onClick={(e) => dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}))}><button><FontAwesomeIcon icon={faComments} />Discussion</button></Link>
-                    <Link to={comment_url} className="comment-bottom-link" onClick={(e) => dispatch(loadComment({subreddit: props.subreddit, id: props.id, title: props.title}))}><button><FontAwesomeIcon icon={faLink} />Details</button></Link>
-                    <Link to="" className="comment-bottom-link"><button><FontAwesomeIcon icon={faShareAlt} />Share</button></Link>
+                    <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>
+                        <button><FontAwesomeIcon icon={faComments} /> Discussion</button>
+                    </Link>
+                    <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>
+                        <button><FontAwesomeIcon icon={faLink} /> Details</button>
+                    </Link>
+                    <Link to="" className="comment-bottom-link">
+                        <button><FontAwesomeIcon icon={faShareAlt} /> Share</button>
+                    </Link>
                 </div> 
             </div>
         </section>

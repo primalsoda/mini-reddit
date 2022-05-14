@@ -22,10 +22,14 @@ export const Subreddit = () => {
     };
     
     return (
-        <>
-            <h1>{`r/${subreddit}`}</h1>
-            <Comments allData={subredditData}/>
-            
-        </>
-    )
+        <div className='threads'>
+            <section className="sidebar-thread">
+                <span></span>
+            </section>
+            <section className="comments-thread">
+                <h1>{`r/${subreddit}`}</h1>
+                <Comments allData={subredditData}/>
+            </section>
+        </div>
+    );    
 };

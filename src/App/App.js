@@ -52,12 +52,12 @@ const sampleProfileLink = 'https://www.reddit.com/user/FreeRangeMenses/.json';
 const getProfileData = async () => {
   const data = await fetch(sampleProfileLink);
   const json = await data.json();
-  console.log(json.data.children);
+  console.log(json);
 };
 getProfileData();
 
-
-const sampleCommentLink = 'https://www.reddit.com/r/funny/comments/uozfwa/be_honest_you_did_something_like_this_at_least/.json';
+*/
+const sampleCommentLink = 'https://www.reddit.com/r/mildlyinfuriating/comments/u5ph5l/rmildlyinfuriating_predictions_tournament_1/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
   const json = await data.json();
@@ -67,7 +67,7 @@ const getCommentData = async () => {
 };
 getCommentData();
 
-
+/*
 const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/.json';
 const getSubredditData = async () => {
   const data = await fetch(sampleSubredditLink);

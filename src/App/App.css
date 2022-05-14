@@ -75,6 +75,10 @@ main {
   margin-bottom: 1rem;
 }
 
+.individual-comment:hover {
+  box-shadow: 2px 2px 2px darkgrey;;
+}
+
 .comment-top {
   display: flex;
   flex-direction: row;
@@ -167,7 +171,7 @@ main {
 
 .comment-bottom {
   display: flex;
-  width: 50%;
+  width: 40%;
   justify-content: space-between;
   align-items: center;
   height: 2rem;
@@ -175,16 +179,27 @@ main {
 
 .comment-bottom-link {
   width: 33%;
-  height: inherit
+  height: inherit;
+}
+
+.comment-bottom-link:hover {
+  background-color: #e3e3e3;
 }
 
 .comment-bottom-link > button {
   width: 100%;
   height: 100%;
+  background-color: inherit;
+  border: none;
+  font-size: 16px;
+}
+
+.comment-bottom-link > button:hover {
+  cursor: pointer;
 }
 
 
-/* --------------------------------------------- HOME PAGE -------------- */
+/* --------------------------------------------- THREADS -------------- */
 
 .threads {
   display: flex;
@@ -199,6 +214,10 @@ main {
 
 .comments-thread {
   max-width: 70rem;
+  margin-left: 1rem;
+}
+
+.comments-thread > h1 {
   margin-left: 1rem;
 }
 
@@ -236,6 +255,7 @@ main {
 
 .category-box > a > p {
   margin-left: 30px;
+  font-weight: 625;
 }
 
 
@@ -323,6 +343,7 @@ main {
 
 
 
+
 /* --------------------------------------------- INDIVIDUAL COMMENT PAGE -------------- */
 
 .main-card {
@@ -330,8 +351,26 @@ main {
   display: flex;
 }
 
+.main-card-title > img {
+  width: 30rem;
+}
+
 .main-card-left-column {
   border-right: 2px solid darkgrey;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 12.5rem;
+}
+
+.ups {
+  font-weight: 650;
+  height: .5rem;
+}
+
+.up_ratio {
+  font-weight: 400;
+  color: #969696;
 }
 
 .main-card-main-column {
@@ -416,12 +455,12 @@ main {
   height: 2rem;
 }
 
-.discussion-card-bottom > a {
-  width: 50%;
-  height: 100%;
+.discussion-card-bottom {
+  width: 35%;
+  height: 2rem;
 }
 
-.discussion-card-bottom > a > button {
+.discussion-card-bottom > button {
   width: 100%;
   height: 100%;
   border: none;
@@ -429,8 +468,12 @@ main {
   text-transform: uppercase;
 }
 
-.discussion-card-bottom > a > button:hover {
+.discussion-card-bottom > button:hover {
   cursor: pointer;
   box-shadow: 1px 1px 1px 1px darkgrey;
+}
+
+.discussion-thread {
+  padding-bottom: 1.5rem;
 }
 

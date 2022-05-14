@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareAlt, faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 const DiscussionCard = ({username, body}) => {
     //
@@ -12,8 +11,8 @@ const DiscussionCard = ({username, body}) => {
                 {<p>{body}</p>}
             </div>
             <div className="discussion-card-bottom">
-                <Link to="/"><button><FontAwesomeIcon icon={faArrowUp} /> UpVote</button></Link>
-                <Link to="/"><button><FontAwesomeIcon icon={faShareAlt} /> Share</button></Link>
+                <button><FontAwesomeIcon icon={faArrowUp} /> UpVote</button>
+                <button><FontAwesomeIcon icon={faShareAlt} /> Share</button>
             </div>
         </div>
     );

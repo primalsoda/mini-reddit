@@ -20,7 +20,9 @@ export const HomePage = () => {
 
     useEffect(() => {
         dispatch(loadCommentsData(url));
-    }, [dispatch, url]); 
+    }, [dispatch, url]);
+    
+    //let allDataArr = allData.map(item => item);
 
     if (isLoading) {
         return <section className="loading">Loading data...</section>

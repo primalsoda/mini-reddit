@@ -25,11 +25,15 @@ export const Profile = () => {
     };
     
     return (
-        <>
-            <h1>{user_id}</h1>
-            <Comments allData={profileData}/>
-            
-        </>
-    )
+        <div className='threads'>
+            <section className="sidebar-thread">
+                <span></span>
+            </section>
+            <section className="comments-thread">
+                <h1>{`Contributor: ${user_id}`}</h1>
+                <Comments allData={profileData}/>
+            </section>
+        </div>
+    );    
 };
 
