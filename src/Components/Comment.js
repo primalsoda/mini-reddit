@@ -18,7 +18,6 @@ const Comment = (props) => {
 
     const handleClickSubreddit = (e) => {
         dispatch(loadSubreddit(props.subreddit));
-        //setHomePageData(props);
     };
 
     const handleClickComment = (e) => {
@@ -27,7 +26,6 @@ const Comment = (props) => {
 
     const handleClickProfile = (e) => {
         dispatch(loadProfile(props.author));
-        //etHomePageData(props);
     };
 
     return (
