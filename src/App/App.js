@@ -56,7 +56,7 @@ const getProfileData = async () => {
 };
 getProfileData();
 
-*/
+
 const sampleCommentLink = 'https://www.reddit.com/r/mildlyinfuriating/comments/u5ph5l/rmildlyinfuriating_predictions_tournament_1/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
@@ -67,7 +67,7 @@ const getCommentData = async () => {
 };
 getCommentData();
 
-/*
+
 const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/.json';
 const getSubredditData = async () => {
   const data = await fetch(sampleSubredditLink);
