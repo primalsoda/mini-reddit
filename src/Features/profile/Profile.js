@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProfile, profileIsLoading, loadProfile } from "./profileSlice";
-import _Comments from "../comments/_Comments";
+import Comments from "../comments/Comments";
 import { useParams } from "react-router-dom";
 
 export const Profile = () => {
@@ -22,7 +22,7 @@ export const Profile = () => {
     return (
         <>
             <h1>{user_id}</h1>
-            <_Comments allData={profileData}/>
+            <Comments allData={profileData}/>
             
         </>
     )

@@ -1,5 +1,6 @@
 body {
   background-color: lightgrey;
+  padding-bottom: 2rem;
 }
 
 .App-header {
@@ -54,6 +55,7 @@ main {
 .comments-thread {
   margin-left: 8rem;
   margin-right: 8rem;
+  max-width: 90rem;
 }
 
 .individual-comment {
@@ -259,14 +261,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 35%;
   margin-left: 3.5rem;
 }
 
 .bc-item, .bc-item > a, .bc-item > a > button {
   border: none;
   text-transform: capitalize;
-  width: 4.5rem;
   border-radius: 15px;
 }
 

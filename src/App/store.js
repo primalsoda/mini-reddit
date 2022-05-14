@@ -3,12 +3,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import commentPageSlice from "../Features/commentPage/commentPageSlice";
 import profileSlice from "../Features/profile/profileSlice";
 import subredditSlice from "../Features/subreddit/subredditSlice";
-import _commentsSlice from "../Features/comments/_commentsSlice";
+import commentsSlice from "../Features/comments/commentsSlice";
 
 const store = configureStore({
     reducer: {
         commentPage: commentPageSlice,
-        _comments: _commentsSlice,
+        comments: commentsSlice,
         profile: profileSlice,
         subreddit: subredditSlice,
     }

@@ -11,7 +11,7 @@ export const loadCommentsData = createAsyncThunk(
   );
 
 
-const _commentsSlice = createSlice({
+const commentsSlice = createSlice({
     name: 'data',
     initialState: {
         data: [],
@@ -36,7 +36,7 @@ const _commentsSlice = createSlice({
     },
   });
   
-  export const selectComments = (state) => state._comments.data;
-  export const commentsAreLoading = (state) => state._comments.isLoadingNow;
+  export const selectComments = (state) => state.comments.data;
+  export const commentsAreLoading = (state) => state.comments.isLoadingNow;
 
-  export default _commentsSlice.reducer;
+  export default commentsSlice.reducer;

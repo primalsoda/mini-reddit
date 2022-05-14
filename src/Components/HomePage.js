@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
-import _Comments from "../Features/comments/_Comments";
+import Comments from "../Features/comments/Comments";
 import SubredditSideBar from "./SubredditSideBar";
 import { useDispatch, useSelector } from "react-redux";
-import { selectComments, commentsAreLoading, loadCommentsData } from "../Features/comments/_commentsSlice";
+import { selectComments, commentsAreLoading, loadCommentsData } from "../Features/comments/commentsSlice";
 import ROUTES from "../App/ROUTES";
 import HomePageCategoryBox from "./HomePageCategoryBox";
 
@@ -10,9 +10,9 @@ export const HomePage = () => {
     const dispatch = useDispatch();
     const allData = useSelector(selectComments);
     const isLoading = useSelector(commentsAreLoading);
-    const url = ROUTES.reddit_url_json;
     
     useEffect(() => {
+        const url = ROUTES.reddit_url_json;
         dispatch(loadCommentsData(url));
     }, [dispatch]); 
 
@@ -23,7 +23,7 @@ export const HomePage = () => {
     return (
         <div className='threads'>
             <section className="comments-thread">
-                <_Comments allData={allData}/>
+                <Comments allData={allData}/>
             </section>
             <section className="sidebar-thread">
                 <HomePageCategoryBox />

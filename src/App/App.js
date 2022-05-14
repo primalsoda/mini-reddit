@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { SearchBar } from '../Components/SearchBar';
-import ROUTES from './ROUTES';
+//import ROUTES from './ROUTES';
 import { Profile } from '../Features/profile/Profile';
 import { Subreddit } from '../Features/subreddit/Subreddit';
 import { CommentPage } from '../Features/commentPage/CommentPage';

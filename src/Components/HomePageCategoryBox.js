@@ -1,11 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFire, faStar, faNewspaper, faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { loadCommentsData } from "../Features/comments/_commentsSlice";
+import { loadCommentsData } from "../Features/comments/commentsSlice";
 import { useDispatch } from "react-redux";
 import ROUTES from "../App/ROUTES";
 //import { Link } from "react-router-dom";
-import { commentsAreLoading } from "../Features/comments/_commentsSlice";
+import { commentsAreLoading } from "../Features/comments/commentsSlice";
 
 const HomePageCategoryBox = () => {
     const dispatch = useDispatch();
