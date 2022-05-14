@@ -23,7 +23,7 @@ export const CommentPage = () => {
 
     useEffect(() => {
         dispatch(loadComment({subreddit: subreddit, id: id, title: title}));
-    }, [dispatch]);
+    }, [dispatch, subreddit, id, title]);
 
     if (isLoading) {
         return <div className="load-comment">Loading data...</div>
