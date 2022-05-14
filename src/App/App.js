@@ -56,7 +56,7 @@ const getProfileData = async () => {
 getProfileData();
 
 */
-const sampleCommentLink = 'https://www.reddit.com/r/nextfuckinglevel/comments/up0jgk/cashier_makes_himself_ready_after_seeing_a/.json';
+const sampleCommentLink = 'https://www.reddit.com/r/funny/comments/uozfwa/be_honest_you_did_something_like_this_at_least/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
   const json = await data.json();

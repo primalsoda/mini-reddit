@@ -11,9 +11,9 @@ const DiscussionCard = ({username, body}) => {
             <div className="discussion-card-middle">
                 {<p>{body}</p>}
             </div>
-            <div className="discussion-card-bottm">
-                <Link to="/"><button><FontAwesomeIcon icon={faArrowUp} />UpVote</button></Link>
-                <Link to="/"><button><FontAwesomeIcon icon={faShareAlt} />Share</button></Link>
+            <div className="discussion-card-bottom">
+                <Link to="/"><button><FontAwesomeIcon icon={faArrowUp} /> UpVote</button></Link>
+                <Link to="/"><button><FontAwesomeIcon icon={faShareAlt} /> Share</button></Link>
             </div>
         </div>
     );
