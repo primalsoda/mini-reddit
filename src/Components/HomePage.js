@@ -22,12 +22,12 @@ export const HomePage = () => {
 
     return (
         <div className='threads'>
-            <section className="comments-thread">
-                <Comments allData={allData}/>
-            </section>
             <section className="sidebar-thread">
                 <HomePageCategoryBox />
                 <SubredditSideBar allData={allData}/>
+            </section>
+            <section className="comments-thread">
+                <Comments allData={allData}/>
             </section>
         </div>
     );

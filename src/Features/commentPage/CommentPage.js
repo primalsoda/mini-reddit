@@ -25,10 +25,6 @@ export const CommentPage = () => {
         dispatch(loadComment({subreddit: subreddit, id: id, title: title}));
     }, [dispatch, subreddit, id, title]);
 
-    if (isLoading) {
-        return <div className="load-comment">Loading data...</div>
-    };
-
     let discussionArr = [];
     commentDiscussionData.forEach((item) => {
         if (item.kind === "t1" && item.data.author !== 'AutoModerator') {
@@ -39,6 +35,10 @@ export const CommentPage = () => {
 
     const ups = parseFloat(commentData.ups/1000).toFixed(1);
 
+    if (isLoading) {
+        return <div className="load-comment">Loading data...</div>
+    };
+
     return (
         <section className="comment-page-thread">
             <div className="breadcrumbs">
@@ -46,7 +46,7 @@ export const CommentPage = () => {
                 <p>/</p>
                 <Link to={subreddit_url} onClick={(e) => dispatch(loadSubreddit(subreddit))}><button className="bc-item">{subreddit}</button></Link>
                 <p>/</p>
-                <button className="bc-item">{commentData.id}</button>
+                <button className="bc-item" id="user_fullname">{commentData.id}</button>
             </div>
             <div className="main-card">
                 <div className="main-card-left-column">

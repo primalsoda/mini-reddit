@@ -6,7 +6,7 @@ const SubredditSideBar = ({allData}) => {
     const default_profile_pic = 'https://external-preview.redd.it/iDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png?auto=webp&s=38648ef0dc2c3fce76d5e1d8639234d8da0152b2';
 
     return (
-        <div className="subreddit-sideBar">
+        <div className="subreddit-sidebar">
             <h2>Featured Subreddits</h2>
             
             {

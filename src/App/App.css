@@ -1,5 +1,5 @@
 body {
-  background-color: lightgrey;
+  background-color: #e3e3e3;
   padding-bottom: 2rem;
 }
 
@@ -49,17 +49,24 @@ main {
 }
 
 
+/* --------------------------------------------- MOBILE DEVICES -------------- */
+
+
+@media only screen and (max-width: 600px) {
+  #search {
+    position: relative;
+    left: 50%;
+    margin: 0;
+    width: 40%;
+  }
+}
+
+
 /* ------------------------------------------------ COMMENT BOX ---------------- */
 
 
-.comments-thread {
-  margin-left: 8rem;
-  margin-right: 8rem;
-  max-width: 90rem;
-}
-
 .individual-comment {
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
   border-radius: 3.5px;
   background-color: white;
   padding-left: 2rem;
@@ -177,17 +184,49 @@ main {
 }
 
 
-/* --------------------------------------------- MOBILE DEVICES -------------- */
+/* --------------------------------------------- HOME PAGE -------------- */
 
-
-@media only screen and (max-width: 600px) {
-  #search {
-    position: relative;
-    left: 50%;
-    margin: 0;
-    width: 40%;
-  }
+.threads {
+  display: flex;
+  max-width: 120rem;
+  margin-left: 6rem;
+  margin-right: 2rem;
 }
+
+.sidebar-thread {
+  width: 20%;
+}
+
+.comments-thread {
+  max-width: 70rem;
+  margin-left: 1rem;
+}
+
+
+
+/* --------------------------------------------- CATEGORY SIDE BOX -------------- */
+
+.category-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-box > button {
+  border: none;
+  background-color: inherit;
+  text-align: left;
+  font-size: 1.25rem;
+  margin-top: 8px;
+  width: 9rem;
+  height: 2.5rem;
+  color: #474747;
+}
+
+.category-box > button:hover {
+  color: orange; 
+  cursor: pointer;
+}
+
 
 
 /* --------------------------------------------- SUBREDDIT SIDE BAR BOX -------------- */
@@ -214,12 +253,61 @@ main {
   display: none;
 }
 
-.SRSB_mini > p {
-  color: red;
+.subreddit-sidebar > h2 {
+  text-transform: uppercase;
+  border-bottom: 1px solid darkgrey;
+  padding-bottom: 3px;
 }
 
-.subreddit-sideBar > h2 {
-  text-transform: uppercase;
+.subreddit-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: 3.5px;
+  padding-bottom: 1rem;
+}
+
+.SRSB-mini {
+  text-decoration: none;
+  height: 100%;
+}
+
+.SRSB-mini:hover {
+  background-color: #ebebeb;
+}
+
+.SRSB-mini > button {
+  width: 100%;
+  border:none;
+  background-color: inherit;
+  display: flex;
+  justify-content:left;
+  align-items: center;
+}
+
+.SRSB-mini > button:hover {
+  cursor: pointer;
+}
+
+.sidebar-profile-pic {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.SRSB-mini-right {
+  text-align: left;
+}
+
+.SRSB-img-div {
+  margin-right: 10px;
+}
+
+.SRSB-mini-right > p {
+  margin-left: -1px;
 }
 
 
@@ -263,6 +351,7 @@ main {
   align-items: center;
   width: 35%;
   margin-left: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 .bc-item, .bc-item > a, .bc-item > a > button {
@@ -274,6 +363,11 @@ main {
 .bc-item:hover {
   cursor: pointer;
   box-shadow: 1px 1px 1px darkgrey;
+}
+
+#user_fullname:hover {
+  cursor:auto;
+  box-shadow: none;
 }
 
 .comment-page-thread {
@@ -290,7 +384,7 @@ main {
 }
 
 .discussion-card {
-  background-color: lightgray;
+  background-color: #e3e3e3;
   width: 85%;
   margin-left: 3.5rem;
   border-left: 3px solid darkgray;

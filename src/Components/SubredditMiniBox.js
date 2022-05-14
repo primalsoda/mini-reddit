@@ -9,11 +9,15 @@ export const SubredditMiniBox = (props) => {
 
     return (
         //
-            <Link to={subreddit_url} id={`SRSB_${props.index}`} className="SRSB_mini" onClick={(e) => dispatch(loadSubreddit(props.subreddit))}>
+            <Link to={subreddit_url} id={`SRSB_${props.index}`} className="SRSB-mini" onClick={(e) => dispatch(loadSubreddit(props.subreddit))}>
                 <button>
-                    <img className="profile-pic" alt="profile pic" src={props.profile_pic} />
-                    <h3>{props.subreddit}</h3>
-                    <p>{props.subscribers.toLocaleString()}</p>
+                    <div className="SRSB-img-div">
+                        <img className="sidebar-profile-pic" alt="profile pic" src={props.profile_pic} />
+                    </div>
+                    <div className="SRSB-mini-right">
+                        <h3>{props.subreddit}</h3>
+                        <p>{`${props.subscribers.toLocaleString()} Subscribers`}</p>
+                    </div>
                 </button>
             </Link>
     )

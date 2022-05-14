@@ -16,10 +16,10 @@ const HomePageCategoryBox = () => {
     
     return (
         <div className="category-box">
-            <button id="best-btn" onClick={(e) => dispatch(loadCommentsData(best_url))}><FontAwesomeIcon icon={faStar} />Best</button>
-            <button id="hot-btn" onClick={(e) => dispatch(loadCommentsData(hot_url))}><FontAwesomeIcon icon={faFire} />Hot</button>
-            <button id="new-btn" onClick={(e) => dispatch(loadCommentsData(new_url))}><FontAwesomeIcon icon={faNewspaper} />New</button>
-            <button id="top-btn" onClick={(e) => dispatch(loadCommentsData(top_url))}><FontAwesomeIcon icon={faArrowUp} />Top</button>
+            <button id="best-btn" onClick={(e) => dispatch(loadCommentsData(best_url))}><FontAwesomeIcon icon={faStar} />  Best</button>
+            <button id="hot-btn" onClick={(e) => dispatch(loadCommentsData(hot_url))}><FontAwesomeIcon icon={faFire} />  Hot</button>
+            <button id="new-btn" onClick={(e) => dispatch(loadCommentsData(new_url))}><FontAwesomeIcon icon={faNewspaper} />  New</button>
+            <button id="top-btn" onClick={(e) => dispatch(loadCommentsData(top_url))}><FontAwesomeIcon icon={faArrowUp} />  Top</button>
         </div>
     );
 };
