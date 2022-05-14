@@ -48,7 +48,7 @@ const Comment = (props) => {
                 </section>
                 <div className="comment-bottom">
                     <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>
-                        <button><FontAwesomeIcon icon={faComments} /> Discussion</button>
+                        <button><FontAwesomeIcon icon={faComments} /> Comments</button>
                     </Link>
                     <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>
                         <button><FontAwesomeIcon icon={faLink} /> Details</button>

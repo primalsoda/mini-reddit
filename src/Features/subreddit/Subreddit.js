@@ -5,6 +5,9 @@ import { loadSubreddit } from "./subredditSlice";
 import { subredditIsLoading } from "./subredditSlice";
 import { useParams } from "react-router-dom";
 import Comments from "../comments/Comments";
+import SubredditSideBar from "../../Components/SubredditSideBar";
+import { selectComments, loadCommentsData, commentsAreLoading } from "../comments/commentsSlice";
+import ROUTES from "../../App/ROUTES";
 
 export const Subreddit = () => {
     const dispatch = useDispatch();
@@ -12,19 +15,24 @@ export const Subreddit = () => {
     const isLoading = useSelector(subredditIsLoading);
     let { subreddit } = useParams();
 
+    const homePageData = useSelector(selectComments);
+    const homePageLoading = useSelector(commentsAreLoading);
+    let url = ROUTES.reddit_url_json
+
     useEffect(() => {
         dispatch(loadSubreddit(subreddit));
-    }, [dispatch, subreddit])
+        dispatch(loadCommentsData(url))
+    }, [dispatch, subreddit, url])
 
 
-    if (isLoading) {
+    if (isLoading || homePageLoading) {
         return <div>Loading data...</div>
     };
     
     return (
         <div className='threads'>
             <section className="sidebar-thread">
-                <span></span>
+                <SubredditSideBar allData={homePageData} />
             </section>
             <section className="comments-thread">
                 <h1>{`r/${subreddit}`}</h1>
