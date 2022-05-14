@@ -11,7 +11,7 @@ export const SubredditMiniBox = (props) => {
         //
             <Link to={subreddit_url} id={`SRSB_${props.index}`} className="SRSB_mini" onClick={(e) => dispatch(loadSubreddit(props.subreddit))}>
                 <button>
-                    <img className="profile-pic" src={props.profile_pic} />
+                    <img className="profile-pic" alt="profile pic" src={props.profile_pic} />
                     <h3>{props.subreddit}</h3>
                     <p>{props.subscribers.toLocaleString()}</p>
                 </button>

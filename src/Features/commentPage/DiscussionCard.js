@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquareUpRight, faShareAlt, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faShareAlt, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const DiscussionCard = ({username, body}) => {

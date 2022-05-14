@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import ROUTES from "../../App/ROUTES";
+//import React from "react";
+//import ROUTES from "../../App/ROUTES";
 
 export const loadCommentsData = createAsyncThunk(
     'data/loadCommentsData',

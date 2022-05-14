@@ -5,7 +5,7 @@ import { loadCommentsData } from "../Features/comments/commentsSlice";
 import { useDispatch } from "react-redux";
 import ROUTES from "../App/ROUTES";
 //import { Link } from "react-router-dom";
-import { commentsAreLoading } from "../Features/comments/commentsSlice";
+//import { commentsAreLoading } from "../Features/comments/commentsSlice";
 
 const HomePageCategoryBox = () => {
     const dispatch = useDispatch();
