@@ -219,3 +219,11 @@ main {
 .subreddit-sideBar > h2 {
   text-transform: uppercase;
 }
+
+
+
+/* --------------------------------------------- INDIVIDUAL COMMENT PAGE -------------- */
+
+#discussion-item_25 {
+  display: none;
+}

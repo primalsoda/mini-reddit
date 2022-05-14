@@ -18,7 +18,7 @@ export const Subreddit = () => {
 
 
     if (isLoading) {
-        return <div>Loading Subreddit data...</div>
+        return <div>Loading data...</div>
     };
     
     return (

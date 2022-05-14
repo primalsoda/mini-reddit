@@ -15,7 +15,8 @@ export const loadComment = createAsyncThunk(
 export const commentPageSlice = createSlice({
     name: 'comment',
     initialState: {
-      comment: [],
+      comment: {},
+      discussion: [],
       isLoadingComment: false,
       hasError: false
     },
@@ -27,16 +28,20 @@ export const commentPageSlice = createSlice({
         })
         .addCase(loadComment.fulfilled, (state, action) => {
           state.isLoadingComment = false;
-          state.comment = action.payload[0].data.children[0];
+          state.comment = action.payload[0].data.children[0].data;
+          state.discussion = action.payload[1].data.children;
         })
-        .addCase(loadComment.rejected, (state, action) => {
+        .addCase(loadComment.rejected, (state) => {
           state.isLoadingComment = false;
           state.hasError = true;
           state.comment = [];
+          state.discussion = [];
         })
     },
   });
   
   export const selectComment = (state) => state.commentPage.comment;
+  export const selectCommentDiscussion = (state) => state.commentPage.discussion;
   export const commentIsLoading = (state) => state.commentPage.isLoadingComment;
+
   export default commentPageSlice.reducer;  

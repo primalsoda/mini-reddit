@@ -16,7 +16,7 @@ export const Profile = () => {
 
 
     if (isLoading) {
-        return <div className="load-profile">Loading profile data...</div>
+        return <div className="load-profile">Loading data...</div>
     };
     
     return (

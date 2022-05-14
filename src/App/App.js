@@ -26,7 +26,6 @@ function App() {
           <Route path='/r/:subreddit/comments/:id/:title' element={<CommentPage />} />
           <Route path='/r/:subreddit' element={<Subreddit />} />
         </Routes>
-        {/* <Comments /> */}
       </main>
     </div>
   );
@@ -47,7 +46,7 @@ const getHomePageData = async () => {
 };
 getHomePageData();
 
-*/
+
 const sampleProfileLink = 'https://www.reddit.com/user/FreeRangeMenses/.json';
 const getProfileData = async () => {
   const data = await fetch(sampleProfileLink);
@@ -56,16 +55,18 @@ const getProfileData = async () => {
 };
 getProfileData();
 
-/*
-const sampleCommentLink = 'https://www.reddit.com/r/funnysigns/comments/ujixi0/garage_sale_it_cracks_me_up_how_one_person/.json';
+*/
+const sampleCommentLink = 'https://www.reddit.com/r/nextfuckinglevel/comments/up0jgk/cashier_makes_himself_ready_after_seeing_a/.json';
 const getCommentData = async () => {
   const data = await fetch(sampleCommentLink);
   const json = await data.json();
-  console.log(json[0].data.children[0]);
+  console.log(json);
+  console.log(json[0]);
+  console.log(json[1]);
 };
 getCommentData();
 
-
+/*
 const sampleSubredditLink = 'https://www.reddit.com/r/funnysigns/.json';
 const getSubredditData = async () => {
   const data = await fetch(sampleSubredditLink);
