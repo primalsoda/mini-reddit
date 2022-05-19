@@ -14,7 +14,7 @@ const Comment = (props) => {
     const profile_url = `/user/${props.author}`;
 
     const likeCount = parseFloat(props.ups/1000).toFixed(1);
-    const title = props.title.length > 224 ? `${props.title.substring(0,225)}...` : `${props.title}`;
+    const title = props.title.length > 168 ? `${props.title.substring(0,169)}...` : `${props.title}`;
 
     const handleClickSubreddit = (e) => {
         dispatch(loadSubreddit(props.subreddit));
@@ -37,9 +37,9 @@ const Comment = (props) => {
                     <p>Posted by <Link className="author-link" to={profile_url} onClick={handleClickProfile}>u/{props.author}</Link></p>
                 </section>
                 <section className="comment-body">
-                    <h2><Link className="title-link" to={comment_url} onClick={handleClickComment}>{title}</Link></h2> 
+                    <h2><Link className="title-link" to={comment_url} onClick={handleClickComment}>{title}</Link></h2>
                     <img alt="comment thumbnail" className="comment-thumbnail" src={props.thumbnail_image}/>
-                    <span className="spacer"></span>
+                    <div className="other-spacer"></div>
                 </section>
                 <div className="comment-bottom">
                     <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>

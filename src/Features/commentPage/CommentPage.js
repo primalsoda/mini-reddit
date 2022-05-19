@@ -38,9 +38,9 @@ export const CommentPage = () => {
 
     const main_media = () => {
         if (commentData.media) {
-            return <iframe width="400px" height="400px" title="post video" src={commentData.media.reddit_video.fallback_url}/>
+            return <div className="media"><iframe width="400px" height="400px" title="post video" src={commentData.media.reddit_video.fallback_url}/></div>
         } else if (commentData.thumbnail && commentData.thumbnail !== "self" && commentData.thumbnail !== "default") {
-            return <img alt="thumbnail one" src={commentData.url}/>
+            return <div className="media"><img alt="thumbnail one" src={commentData.url}/></div>
         }
     };
 

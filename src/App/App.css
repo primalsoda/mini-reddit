@@ -67,6 +67,7 @@ main {
 }
 
 
+
 /* ------------------------------------------------ COMMENT BOX ---------------- */
 
 
@@ -74,10 +75,15 @@ main {
   border: 1px solid rgb(188, 188, 188);
   border-radius: 3px;
   background-color: white;
-  height: 15rem;
   margin-bottom: 1rem;
   display: flex;
-  width: 85%;
+  width: 93%;
+}
+
+@media (max-width: 1120px) {
+  .individual-comment {
+    width: 100%;
+  }
 }
 
 .individual-comment:hover {
@@ -150,12 +156,12 @@ main {
 
 .comment-body {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   height: 8rem;
   justify-content: space-between;
   align-items: top;
   padding-left: 1rem;
+  margin-bottom: .5rem;
 }
 
 .comment-body > h2 {
@@ -168,6 +174,34 @@ main {
   height: 8rem;
   object-fit: cover;
 }
+
+@media (max-width: 600px) {
+  .comment-container {
+    flex-basis: 100%;
+  }
+
+  .like-box, .other-spacer {
+    display: none;
+  }
+
+  .comment-thumbnail {
+    display: none;
+  }
+
+  .comment-body > h2 {
+    flex-basis: 95%;
+    margin-bottom: .5rem;
+
+  }
+
+  .comment-bottom {
+    flex-basis: 95%;
+    width: 100%;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+  }
+}
+
 
 .comment-bottom {
   display: flex;
@@ -197,6 +231,18 @@ main {
   font-weight: 650;
 }
 
+@media (max-width: 600px) {
+  .comment-bottom-link > button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .comment-bottom-link > button {
+    font-size: 12px;
+  }
+}
+
 .comment-bottom-link > button:hover {
   cursor: pointer;
   border-radius: 20px;
@@ -208,14 +254,14 @@ main {
 
 .like-box {
   flex-basis: 12%;
-  background-color: rgb(210, 210, 210);
+  background-color: rgb(208, 208, 208);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .like-box > p {
-  color: white;
+  color: rgb(121, 121, 121);
   font-weight: 750;
   font-size: 18px;
   text-align: center;
@@ -226,6 +272,7 @@ main {
 }
 
 
+
 /* --------------------------------------------- THREADS -------------- */
 
 .threads {
@@ -233,6 +280,7 @@ main {
   max-width: 120rem;
   margin-left: 6rem;
   margin-right: 2rem;
+  background-color: none;
 }
 
 .sidebar-thread {
@@ -246,6 +294,21 @@ main {
 
 .comments-thread > h1 {
   margin-left: 1rem;
+}
+
+@media (max-width: 1120px) {
+  .threads {
+    margin-left: 2rem;
+  }
+  
+  .sidebar-thread {
+    display: none;
+  }
+
+  .comments-thread {
+    max-width: 70rem;
+    margin-left: 0px;
+  }
 }
 
 
@@ -502,6 +565,66 @@ main {
 
 .discussion-thread {
   padding-bottom: 1.5rem;
+  background-color: none;
+  width: inherit;
+  margin-right: 1rem;
+}
+
+.media > img, .media > iframe { 
+  width: 100%;
+}
+
+
+@media (max-width: 650px) {
+  .breadcrumbs {
+    display: none;
+  }
+
+  .main-card-main-column {
+    margin-left: 1rem;
+  }
+
+  .main-card {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+
+  .media > img, .media > iframe { 
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 1100px) {
+  .comment-page-thread {
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+
+  .comment-page-thread {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .main-card-title {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main-card-left-column {
+    background-color: none;
+  }
+
+  .discussion-card {
+    width: 75%;
+    
+  }
+
+  .main-card-main-column {
+    margin-right: 4rem;
+  }
+
 }
 
 
