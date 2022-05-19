@@ -8,6 +8,7 @@ import Comments from "../comments/Comments";
 import SubredditSideBar from "../../Components/SubredditSideBar";
 import { selectComments, loadCommentsData, commentsAreLoading } from "../comments/commentsSlice";
 import ROUTES from "../../App/ROUTES";
+import Loading from "../../Components/Loading";
 
 export const Subreddit = () => {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ export const Subreddit = () => {
 
 
     if (isLoading || homePageLoading) {
-        return <div className="loading">Loading data...</div>
+        return <Loading />
     };
 
     if (!subredditData.length) {

@@ -71,13 +71,13 @@ main {
 
 
 .individual-comment {
-  border: 1px solid lightgrey;
+  border: 1px solid rgb(188, 188, 188);
   border-radius: 3px;
   background-color: white;
-  padding-left: 2rem;
-  padding-top: .7rem;
-  height: 16rem;
+  height: 15rem;
   margin-bottom: 1rem;
+  display: flex;
+  width: 85%;
 }
 
 .individual-comment:hover {
@@ -86,14 +86,22 @@ main {
   box-shadow: -2px 5px 10px -5px #bababa;
 }
 
+.comment-container {
+  background-color: rgb(255, 255, 255);
+  width: 85%;
+  height: inherit;
+  border-radius: 3px;
+}
+
 .comment-top {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
   align-items: center;
-  width: 50rem;
   font-size: 15px;
+  padding-left: 1rem;
+  padding-top: .7rem;
 }
 
 .comment-top > a, p {
@@ -144,9 +152,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 10rem;
+  height: 8rem;
   justify-content: space-between;
   align-items: top;
+  padding-left: 1rem;
 }
 
 .comment-body > h2 {
@@ -155,38 +164,21 @@ main {
 
 .comment-thumbnail {
   flex-basis: 20%;
-  width: 3rem;
+  width: 8rem;
+  height: 8rem;
   object-fit: cover;
-  max-height: 100%;
-}
-
-.like-count-box {
-  flex-basis: 12%;
-  background-color: lightblue;
-}
-
-.like-count-box > p {
-  color: white;
-  font-weight: 800;
-  font-size: 20px;
-  text-align: center;
-}
-
-.spacer {
-  flex-basis: 5%;
 }
 
 .comment-bottom {
   display: flex;
-  width: 35%;
+  width: 40%;
   justify-content: space-between;
   align-items: center;
   height: 2.5rem;
-  margin-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 .comment-bottom-link {
-  width: 33%;
   height: inherit;
 }
 
@@ -208,6 +200,29 @@ main {
 .comment-bottom-link > button:hover {
   cursor: pointer;
   border-radius: 20px;
+}
+
+.spacer {
+  flex-basis: 3%;;
+}
+
+.like-box {
+  flex-basis: 12%;
+  background-color: rgb(210, 210, 210);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-box > p {
+  color: white;
+  font-weight: 750;
+  font-size: 18px;
+  text-align: center;
+}
+
+.like-box > div {
+  display: none;
 }
 
 
@@ -489,3 +504,36 @@ main {
   padding-bottom: 1.5rem;
 }
 
+
+
+/* ------------------------------------------------ LOADING ---------------- */
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -800px 0
+  }
+  100% {
+    background-position: 800px 0
+  }
+}
+
+.animated-background {
+  animation-duration: 2.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background-color: #e3e3e3;
+  background: linear-gradient(to right, #e3e3e3 30%, #bbbbbb 50%);
+  background-size: 800px 104px;
+  height: 35px;
+  width: 300px;
+  position: relative;
+  border-radius: 10px;
+}

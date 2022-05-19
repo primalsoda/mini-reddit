@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { loadCommentsData, selectComments, commentsAreLoading } from "../comments/commentsSlice";
 import SubredditSideBar from "../../Components/SubredditSideBar";
 import ROUTES from "../../App/ROUTES";
+import Loading from "../../Components/Loading";
 
 
 export const Profile = () => {
@@ -25,7 +26,7 @@ export const Profile = () => {
 
 
     if (isLoading || homePageLoading) {
-        return <div className="loading">Loading data...</div>
+        return <Loading />
     };
     
     return (

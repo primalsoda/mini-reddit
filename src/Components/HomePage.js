@@ -6,6 +6,7 @@ import { selectComments, commentsAreLoading, loadCommentsData } from "../Feature
 import ROUTES from "../App/ROUTES";
 import HomePageCategoryBox from "./HomePageCategoryBox";
 import { useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 export const HomePage = () => {
     const dispatch = useDispatch();
@@ -25,7 +26,9 @@ export const HomePage = () => {
     //let allDataArr = allData.map(item => item);
 
     if (isLoading) {
-        return <section className="loading">Loading data...</section>
+        return (
+            <Loading />
+        );
     };
 
     return (

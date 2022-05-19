@@ -3,7 +3,7 @@ import { loadSubreddit } from "../Features/subreddit/subredditSlice";
 import { loadProfile } from "../Features/profile/profileSlice";
 import { loadComment } from "../Features/commentPage/commentPageSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComments, faLink, faShareAlt } from "@fortawesome/free-solid-svg-icons";
+import { faComments, faLink, faShareAlt, faArrowUpShortWide } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -40,9 +40,6 @@ const Comment = (props) => {
                     <h2><Link className="title-link" to={comment_url} onClick={handleClickComment}>{title}</Link></h2> 
                     <img alt="comment thumbnail" className="comment-thumbnail" src={props.thumbnail_image}/>
                     <span className="spacer"></span>
-                    <div className="like-count-box">
-                        <p>{`${likeCount}K`}</p>
-                    </div>
                 </section>
                 <div className="comment-bottom">
                     <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>
@@ -55,6 +52,11 @@ const Comment = (props) => {
                         <button><FontAwesomeIcon icon={faShareAlt} /> Share</button>
                     </Link>
                 </div> 
+            </div>
+            <div className="spacer"></div>
+            <div className="like-box">
+                    <p>{`${likeCount}K`}</p>
+                    <div><FontAwesomeIcon icon={faArrowUpShortWide} /></div>
             </div>
         </section>
     )

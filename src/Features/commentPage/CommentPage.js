@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { faHouse, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { loadSubreddit } from "../subreddit/subredditSlice";
+import Loading from "../../Components/Loading";
 
 
 export const CommentPage = () => {
@@ -44,7 +45,7 @@ export const CommentPage = () => {
     };
 
     if (isLoading) {
-        return <div className="loading">Loading data...</div>
+        return <Loading />
     };
 
     return (
