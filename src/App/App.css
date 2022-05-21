@@ -162,10 +162,12 @@ main {
   align-items: top;
   padding-left: 1rem;
   margin-bottom: .5rem;
+  margin-top: .5rem;
 }
 
 .comment-body > h2 {
   flex-basis: 55%;
+  overflow: hidden;
 }
 
 .comment-thumbnail {
@@ -190,26 +192,29 @@ main {
 
   .comment-body > h2 {
     flex-basis: 95%;
-    margin-bottom: .5rem;
+  }
 
+  .comment-body {
+    height: 6.5rem;
   }
 
   .comment-bottom {
     flex-basis: 95%;
     width: 100%;
     margin-bottom: .5rem;
-    margin-top: .5rem;
   }
 }
 
 
 .comment-bottom {
   display: flex;
-  width: 40%;
-  justify-content: space-between;
+  width: 55%;
+  justify-content: left;
   align-items: center;
   height: 2.5rem;
   padding-left: 1rem;
+  margin-bottom: .5rem;
+  /* margin-top: 2rem; */
 }
 
 .comment-bottom-link {
@@ -231,15 +236,18 @@ main {
   font-weight: 650;
 }
 
-@media (max-width: 600px) {
-  .comment-bottom-link > button {
-    font-size: 10px;
-  }
+.comment-bottom-icon,
+.comment-bottom-link > button > p {
+  display: inline;
 }
 
-@media (max-width: 900px) {
-  .comment-bottom-link > button {
-    font-size: 12px;
+@media (max-width: 800px) {
+  .comment-bottom-link > button > p {
+    display: none;
+  }
+
+  .comment-bottom-link {
+    width: 3rem;
   }
 }
 

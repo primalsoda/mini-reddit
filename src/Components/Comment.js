@@ -14,7 +14,7 @@ const Comment = (props) => {
     const profile_url = `/user/${props.author}`;
 
     const likeCount = parseFloat(props.ups/1000).toFixed(1);
-    const title = props.title.length > 168 ? `${props.title.substring(0,169)}...` : `${props.title}`;
+    const title = props.title.length > 200 ? `${props.title.substring(0,201)}...` : `${props.title}`;
 
     const handleClickSubreddit = (e) => {
         dispatch(loadSubreddit(props.subreddit));
@@ -43,13 +43,22 @@ const Comment = (props) => {
                 </section>
                 <div className="comment-bottom">
                     <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>
-                        <button><FontAwesomeIcon icon={faComments} /> Comments</button>
+                        <button>
+                            <FontAwesomeIcon icon={faComments} className="comment-bottom-icon"/>
+                            <p>Comments</p>
+                        </button>
                     </Link>
                     <Link to={comment_url} className="comment-bottom-link" onClick={handleClickComment}>
-                        <button><FontAwesomeIcon icon={faLink} /> Details</button>
+                        <button>
+                            <FontAwesomeIcon icon={faLink} className="comment-bottom-icon"/>
+                            <p>Details</p>
+                        </button>
                     </Link>
                     <Link to="" className="comment-bottom-link">
-                        <button><FontAwesomeIcon icon={faShareAlt} /> Share</button>
+                        <button>
+                            <FontAwesomeIcon icon={faShareAlt} className="comment-bottom-icon"/>
+                            <p>Share</p>
+                        </button>
                     </Link>
                 </div> 
             </div>
